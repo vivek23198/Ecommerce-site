@@ -32,6 +32,8 @@ app.use(shopRoutes);
 
 app.use(errorController.get404);
 
+const port =  process.env.PORT || 3000;
+
 mongoose
   .connect(
     'mongodb+srv://FirstDatabase:YowrxDQweYMkKBnm@cluster0-vfbhi.mongodb.net/Shop'
@@ -49,7 +51,7 @@ mongoose
         user.save();
       }
     });
-    app.listen(3000);
+    app.listen(port);
   })
   .catch(err => {
     console.log(err);
